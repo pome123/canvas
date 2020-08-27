@@ -1,20 +1,17 @@
 "use strict";
 // Canvasを描画するエリア
-const canvasArea = document.getElementById("canvasArea");
+const canvasSquare = document.getElementById("canvasSquare");
 
 // Canvas要素取得
-const cs = document.createElement("canvas");
-const ctx = cs.getContext("2d");
-
-cs.width = "600";
-cs.height = "400";
+const csSquare = document.createElement("canvas");
+const ctxSquare = csSquare.getContext("2d");
 
 // 正方形作成
-ctx.strokeRect(0, 0, 100, 100);
-ctx.fillRect(150, 0, 100, 100);
+ctxSquare.strokeRect(0, 0, 100, 100);
+ctxSquare.fillRect(150, 0, 100, 100);
 
 // HTMLに作成した正方形追加
-canvasArea.appendChild(cs);
+canvasSquare.appendChild(csSquare);
 
-console.log(cs);
-console.log(ctx);
+console.log(csSquare);
+console.log(ctxSquare);
