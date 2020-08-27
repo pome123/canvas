@@ -16,7 +16,6 @@ ctxSquare.fillRect(150, 0, 100, 100);
 // HTMLに作成した正方形追加
 canvasSquare.appendChild(csSquare);
 
-console.log(csSquare);
 console.log(ctxSquare);
 
 /************
