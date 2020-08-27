@@ -15,3 +15,21 @@ canvasSquare.appendChild(csSquare);
 
 console.log(csSquare);
 console.log(ctxSquare);
+// 三角形を描画するエリア
+const canvasTriangle = document.getElementById("canvasTriangle");
+
+// Canvas要素取得
+const csTriangle = document.createElement("canvas");
+const ctxTriangle = csTriangle.getContext("2d");
+
+ctxTriangle.beginPath();
+ctxTriangle.moveTo(50, 50);
+ctxTriangle.lineTo(300, 0);
+ctxTriangle.lineTo(300, 150);
+ctxTriangle.closePath();
+ctxTriangle.fill();
+
+// HTMLに作成した正方形追加
+canvasTriangle.appendChild(csTriangle);
+
+console.log(ctxTriangle);
