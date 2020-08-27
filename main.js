@@ -1,5 +1,8 @@
 "use strict";
-// Canvasを描画するエリア
+/************
+    正方形
+ ************/
+// 正方形を描画するエリア
 const canvasSquare = document.getElementById("canvasSquare");
 
 // Canvas要素取得
@@ -15,6 +18,10 @@ canvasSquare.appendChild(csSquare);
 
 console.log(csSquare);
 console.log(ctxSquare);
+
+/************
+    三角形
+ ************/
 // 三角形を描画するエリア
 const canvasTriangle = document.getElementById("canvasTriangle");
 
