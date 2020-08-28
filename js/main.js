@@ -99,3 +99,31 @@ ctxPolygonL.fill();
 canvasPolygonL.appendChild(csPolygonL);
 
 console.log(ctxPolygonL);
+
+/************
+    扇型風
+ ************/
+// 扇型の頂点のデータ
+const sector = figure.sector;
+
+// 扇型を描画するエリア
+const canvasSector = document.getElementById("canvasSector");
+
+// Canvas要素取得
+const csSector = document.createElement("canvas");
+const ctxSector = csSector.getContext("2d");
+
+// 扇型作成
+ctxSector.fillStyle = "rgba(255, 0, 0, .5)";
+ctxSector.beginPath();
+ctxSector.moveTo(sector.moveToX, sector.moveToY);
+for (let i = 0; i < sector.positions.length; i++) {
+  ctxSector.lineTo(sector.positions[i].x, sector.positions[i].y);
+}
+ctxSector.closePath();
+ctxSector.fill();
+
+// HTMLに作成した扇型追加
+canvasSector.appendChild(csSector);
+
+console.log(ctxSector);
