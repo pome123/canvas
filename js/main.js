@@ -52,6 +52,7 @@ const canvasTriangle = document.getElementById("canvasTriangle");
 const csTriangle = document.createElement("canvas");
 const ctxTriangle = csTriangle.getContext("2d");
 
+// 三角形作成
 ctxTriangle.beginPath();
 ctxTriangle.moveTo(triangle.moveToX, triangle.moveToY);
 for (let i = 0; i < triangle.positions.length; i++) {
@@ -78,6 +79,7 @@ const canvasPolygonL = document.getElementById("canvasPolygonL");
 const csPolygon = document.createElement("canvas");
 const ctxPolygon = csPolygon.getContext("2d");
 
+// L字型作成
 ctxPolygon.fillStyle = "rgba(0, 255, 0, .5)";
 ctxPolygon.beginPath();
 ctxPolygon.moveTo(polygon.moveToX, polygon.moveToY);
