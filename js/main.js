@@ -111,6 +111,8 @@ const canvasSector = document.getElementById("canvasSector");
 
 // Canvas要素取得
 const csSector = document.createElement("canvas");
+csSector.width = window.innerWidth;
+csSector.height = 800;
 const ctxSector = csSector.getContext("2d");
 
 // 扇型作成
