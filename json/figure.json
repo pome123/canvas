@@ -9,11 +9,16 @@
   "triangle": {
     "moveToX": 50,
     "moveToY": 50,
-    "corner1X": 300,
-    "corner1Y": 0,
-    "corner2X": 300,
-    "corner2Y": 150,
-    "name": "三角形"
+    "positions": [
+      {
+        "x": 300,
+        "y": 0
+      },
+      {
+        "x": 300,
+        "y": 150
+      }
+    ]
   },
   "polygon": {
     "moveToX": 0,

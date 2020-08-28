@@ -54,8 +54,9 @@ const ctxTriangle = csTriangle.getContext("2d");
 
 ctxTriangle.beginPath();
 ctxTriangle.moveTo(triangle.moveToX, triangle.moveToY);
-ctxTriangle.lineTo(triangle.corner1X, triangle.corner1Y);
-ctxTriangle.lineTo(triangle.corner2X, triangle.corner2Y);
+for (let i = 0; i < triangle.positions.length; i++) {
+  ctxTriangle.lineTo(triangle.positions[i].x, triangle.positions[i].y);
+}
 ctxTriangle.closePath();
 ctxTriangle.fill();
 
