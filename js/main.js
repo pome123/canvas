@@ -59,7 +59,7 @@ ctxTriangle.lineTo(triangle.corner2X, triangle.corner2Y);
 ctxTriangle.closePath();
 ctxTriangle.fill();
 
-// HTMLに作成した正方形追加
+// HTMLに作成した三角形追加
 canvasTriangle.appendChild(csTriangle);
 
 console.log(ctxTriangle);
@@ -88,7 +88,7 @@ ctxPolygon.lineTo(polygon.corner5X, polygon.corner5Y);
 ctxPolygon.closePath();
 ctxPolygon.fill();
 
-// HTMLに作成した正方形追加
+// HTMLに作成したL字型追加
 canvasPolygonL.appendChild(csPolygon);
 
 console.log(ctxPolygon);
