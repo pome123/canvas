@@ -32,7 +32,13 @@ const csSquare = document.createElement("canvas");
 const ctxSquare = csSquare.getContext("2d");
 
 // 正方形作成
-ctxSquare.strokeRect(square.x, square.y, square.width, square.height);
+ctxSquare.beginPath();
+ctxSquare.moveTo(square.moveToX, square.moveToY);
+for (let i = 0; i < square.positions.length; i++) {
+  ctxSquare.lineTo(square.positions[i].x, square.positions[i].y);
+}
+ctxSquare.closePath();
+ctxSquare.fill();
 
 // HTMLに作成した正方形追加
 canvasSquare.appendChild(csSquare);
@@ -70,28 +76,26 @@ console.log(ctxTriangle);
     L字型
  ************/
 // L字型の頂点のデータ
-const polygon = figure.polygon;
+const polygonL = figure.polygonL;
 
 // L字型を描画するエリア
 const canvasPolygonL = document.getElementById("canvasPolygonL");
 
 // Canvas要素取得
-const csPolygon = document.createElement("canvas");
-const ctxPolygon = csPolygon.getContext("2d");
+const csPolygonL = document.createElement("canvas");
+const ctxPolygonL = csPolygonL.getContext("2d");
 
 // L字型作成
-ctxPolygon.fillStyle = "rgba(0, 255, 0, .5)";
-ctxPolygon.beginPath();
-ctxPolygon.moveTo(polygon.moveToX, polygon.moveToY);
-ctxPolygon.lineTo(polygon.corner1X, polygon.corner1Y);
-ctxPolygon.lineTo(polygon.corner2X, polygon.corner2Y);
-ctxPolygon.lineTo(polygon.corner3X, polygon.corner3Y);
-ctxPolygon.lineTo(polygon.corner4X, polygon.corner4Y);
-ctxPolygon.lineTo(polygon.corner5X, polygon.corner5Y);
-ctxPolygon.closePath();
-ctxPolygon.fill();
+ctxPolygonL.fillStyle = "rgba(0, 255, 0, .5)";
+ctxPolygonL.beginPath();
+ctxPolygonL.moveTo(polygonL.moveToX, polygonL.moveToY);
+for (let i = 0; i < polygonL.positions.length; i++) {
+  ctxPolygonL.lineTo(polygonL.positions[i].x, polygonL.positions[i].y);
+}
+ctxPolygonL.closePath();
+ctxPolygonL.fill();
 
 // HTMLに作成したL字型追加
-canvasPolygonL.appendChild(csPolygon);
+canvasPolygonL.appendChild(csPolygonL);
 
-console.log(ctxPolygon);
+console.log(ctxPolygonL);
