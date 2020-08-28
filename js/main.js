@@ -65,13 +65,13 @@ canvasTriangle.appendChild(csTriangle);
 console.log(ctxTriangle);
 
 /************
-    多角形
+    L字型
  ************/
-// 三角形の頂点のデータ
+// L字型の頂点のデータ
 const polygon = figure.polygon;
 
-// 多角形を描画するエリア
-const canvasPolygon = document.getElementById("canvasPolygon");
+// L字型を描画するエリア
+const canvasPolygonL = document.getElementById("canvasPolygonL");
 
 // Canvas要素取得
 const csPolygon = document.createElement("canvas");
@@ -89,6 +89,6 @@ ctxPolygon.closePath();
 ctxPolygon.fill();
 
 // HTMLに作成した正方形追加
-canvasPolygon.appendChild(csPolygon);
+canvasPolygonL.appendChild(csPolygon);
 
 console.log(ctxPolygon);
