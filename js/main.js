@@ -1,7 +1,29 @@
 "use strict";
+
+// JSONファイルの読み込み
+const file = "json/figure.json";
+let figure;
+
+const request = new XMLHttpRequest();
+
+request.open("get", file, false); //ファイルオープン : 同期モード
+request.onload = function () {
+  try {
+    figure = JSON.parse(this.responseText); //JSON型でパース。
+  } catch (e) {
+    alert("読み込み失敗");
+  }
+};
+request.send(null); //ここで読込実行。
+
+console.log(figure);
+
 /************
     正方形
  ************/
+// 正方形の頂点のデータ
+const square = figure.square;
+
 // 正方形を描画するエリア
 const canvasSquare = document.getElementById("canvasSquare");
 
@@ -10,8 +32,7 @@ const csSquare = document.createElement("canvas");
 const ctxSquare = csSquare.getContext("2d");
 
 // 正方形作成
-ctxSquare.strokeRect(0, 0, 100, 100);
-ctxSquare.fillRect(150, 0, 100, 100);
+ctxSquare.strokeRect(square.x, square.y, square.width, square.height);
 
 // HTMLに作成した正方形追加
 canvasSquare.appendChild(csSquare);
@@ -21,6 +42,9 @@ console.log(ctxSquare);
 /************
     三角形
  ************/
+// 三角形の頂点のデータ
+const triangle = figure.triangle;
+
 // 三角形を描画するエリア
 const canvasTriangle = document.getElementById("canvasTriangle");
 
@@ -29,9 +53,9 @@ const csTriangle = document.createElement("canvas");
 const ctxTriangle = csTriangle.getContext("2d");
 
 ctxTriangle.beginPath();
-ctxTriangle.moveTo(50, 50);
-ctxTriangle.lineTo(300, 0);
-ctxTriangle.lineTo(300, 150);
+ctxTriangle.moveTo(triangle.moveToX, triangle.moveToY);
+ctxTriangle.lineTo(triangle.corner1X, triangle.corner1Y);
+ctxTriangle.lineTo(triangle.corner2X, triangle.corner2Y);
 ctxTriangle.closePath();
 ctxTriangle.fill();
 
@@ -43,6 +67,9 @@ console.log(ctxTriangle);
 /************
     多角形
  ************/
+// 三角形の頂点のデータ
+const polygon = figure.polygon;
+
 // 多角形を描画するエリア
 const canvasPolygon = document.getElementById("canvasPolygon");
 
@@ -52,12 +79,12 @@ const ctxPolygon = csPolygon.getContext("2d");
 
 ctxPolygon.fillStyle = "rgba(0, 255, 0, .5)";
 ctxPolygon.beginPath();
-ctxPolygon.moveTo(0, 0);
-ctxPolygon.lineTo(0, 150);
-ctxPolygon.lineTo(300, 150);
-ctxPolygon.lineTo(300, 100);
-ctxPolygon.lineTo(50, 100);
-ctxPolygon.lineTo(50, 0);
+ctxPolygon.moveTo(polygon.moveToX, polygon.moveToY);
+ctxPolygon.lineTo(polygon.corner1X, polygon.corner1Y);
+ctxPolygon.lineTo(polygon.corner2X, polygon.corner2Y);
+ctxPolygon.lineTo(polygon.corner3X, polygon.corner3Y);
+ctxPolygon.lineTo(polygon.corner4X, polygon.corner4Y);
+ctxPolygon.lineTo(polygon.corner5X, polygon.corner5Y);
 ctxPolygon.closePath();
 ctxPolygon.fill();
 
