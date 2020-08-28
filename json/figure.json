@@ -1,0 +1,33 @@
+{
+  "square": {
+    "x": 0,
+    "y": 0,
+    "width": 100,
+    "height": 100,
+    "name": "四角形"
+  },
+  "triangle": {
+    "moveToX": 50,
+    "moveToY": 50,
+    "corner1X": 300,
+    "corner1Y": 0,
+    "corner2X": 300,
+    "corner2Y": 150,
+    "name": "三角形"
+  },
+  "polygon": {
+    "moveToX": 0,
+    "moveToY": 0,
+    "corner1X": 0,
+    "corner1Y": 150,
+    "corner2X": 300,
+    "corner2Y": 150,
+    "corner3X": 300,
+    "corner3Y": 100,
+    "corner4X": 50,
+    "corner4Y": 100,
+    "corner5X": 50,
+    "corner5Y": 0,
+    "name": "三角形"
+  }
+}
